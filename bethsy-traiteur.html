@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="fr" class="cfryteb idc0_350">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Bethsy Saveur de l'Île — Traiteur, Réceptions et Cuisine Haïtienne
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --gold: #c9a96e;
+        --gold-light: #d4ba8a;
+        --gold-dark: #a8863e;
+        --cream: #f5f0e8;
+        --cream-muted: #e8e0d4;
+        --bg-dark: #0c0b09;
+        --bg-section: #111010;
+        --bg-card: #1a1918;
+        --text-primary: #f5f0e8;
+        --text-muted: #9a948a;
+        --text-subtle: #6b665e;
+        --serif: "Cormorant Garamond", "Georgia", serif;
+        --sans: "Montserrat", "Helvetica Neue", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        background: var(--bg-dark);
+        color: var(--text-primary);
+        font-family: var(--sans);
+        font-weight: 300;
+        line-height: 1.7;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        max-width: 100vw;
+      }
+
+      /* ─── NAV ─── */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 1.5rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition:
+          background 0.5s ease,
+          padding 0.4s ease;
+        background: linear-gradient(
+          to bottom,
+          rgba(12, 11, 9, 0.7) 0%,
+          transparent 100%
+        );
+      }
+
+      .nav.scrolled {
+        background: rgba(12, 11, 9, 0.95);
+        backdrop-filter: blur(12px);
+        padding: 1rem 3rem;
+        border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+      }
+
+      .nav__logo {
+        
+        font-family: var(--serif);
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold);
+        text-decoration: none;
+
+        filter: drop-shadow(0 2px 4px rgba(12, 11, 9, 0.8)) 
+          drop-shadow(0 4px 12px rgba(12, 11, 9, 0.5));
+      }
+
+      .nav__logo svg stroke {
+  stroke: currentColor;
+}
+
+      .nav__links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
+
+      .nav__links a {
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav__links a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: width 0.3s ease;
+      }
+
+      .nav__links a:hover {
+        color: var(--gold);
+      }
+
+      .nav__links a:hover::after {
+        width: 100%;
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 700px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        overflow: hidden;
+      }
+
+      
+
+      .hero__image {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(12, 11, 9, 0.2) 0%,
+            rgba(12, 11, 9, 0.1) 40%,
+            rgba(12, 11, 9, 0.7) 80%,
+            rgba(12, 11, 9, 1) 100%
+          ),
+          url("./images/Gemini_Generated_Image_110xhz110xhz110x.png")
+            center/cover no-repeat;
+      }
+
+      .hero__content {
+        position: relative;
+        z-index: 2;
+        max-width: 680px;
+        padding: 0 5vw 8vh;
+      }
+
+      .hero__eyebrow {
+        font-family: var(--sans);
+        font-size: 0.65rem;
+        font-weight: 500;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .hero__eyebrow, 
+.hero__title, 
+.hero__description {
+  text-shadow: 
+    0 1px 3px rgba(12, 11, 9, 0.9),
+    0 4px 12px rgba(12, 11, 9, 0.7),
+    0 10px 30px rgba(12, 11, 9, 0.5);
+}
+
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding: 0 5vw 8vh;
+  
+  /* Crée un halo de flou invisible et doux centré derrière les textes */
+  background: radial-gradient(
+    circle at 30% 50%, 
+    rgba(12, 11, 9, 0.5) 0%, 
+    rgba(12, 11, 9, 0.2) 60%, 
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 30px rgba(12, 11, 9, 0.6));
+}
+
+      .hero__eyebrow::before {
+        content: "";
+        width: 40px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      .hero__title {
+        font-family: var(--serif);
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        font-weight: 300;
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        color: var(--cream);
+        margin-bottom: 1.5rem;
+      }
+
+      .hero__title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+
+      .hero__description {
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.8;
+        color: var(--text-muted);
+        max-width: 480px;
+        margin-bottom: 2.5rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: var(--sans);
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.1rem 2.5rem;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        background: transparent;
+        cursor: pointer;
+        transition:
+          background 0.4s ease,
+          color 0.4s ease,
+          transform 0.3s ease;
+      }
+
+      .btn:hover {
+        background: var(--gold);
+        color: var(--bg-dark);
+        transform: translateY(-2px);
+      }
+
+      .btn--filled {
+        background: var(--gold);
+        color: var(--bg-dark);
+      }
+
+      .btn--filled:hover {
+        background: var(--gold-light);
+      }
+
+      .btn__arrow {
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .btn:hover .btn__arrow {
+        transform: translateX(4px);
+      }
+
+      /* ─── SCROLL INDICATOR ─── */
+      .hero__scroll {
+        position: absolute;
+        bottom: 2.5rem;
+        right: 5vw;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .hero__scroll span {
+        font-size: 0.6rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--text-subtle);
+        writing-mode: vertical-rl;
+      }
+
+      .hero__scroll__line {
+        width: 1px;
+        height: 60px;
+        background: linear-gradient(to bottom, var(--gold), transparent);
+        animation: scrollPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scaleY(1);
+        }
+        50% {
+          opacity: 0.4;
+          transform: scaleY(0.6);
+        }
+      }
+
+      /* ─── INTRO ─── */
+      .intro {
+        padding: 10rem 5vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      .intro__text {
+        max-width: 520px;
+      }
+
+      .section-eyebrow {
+        font-size: 0.65rem;
+        font-weight: 500;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .section-eyebrow::before {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      .intro__heading {
+        font-family: var(--serif);
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 300;
+        line-height: 1.2;
+        color: var(--cream);
+        margin-bottom: 2rem;
+      }
+
+      .intro__body {
+        font-size: 0.95rem;
+        line-height: 1.9;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .intro__signature {
+        font-family: var(--serif);
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-top: 2rem;
+      }
+
+      .intro__image {
+        position: relative;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+      }
+
+      .intro__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.85) contrast(1.05);
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .intro__image:hover img {
+        transform: scale(1.04);
+      }
+
+      .intro__image::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(201, 169, 110, 0.15);
+        pointer-events: none;
+      }
+
+      /* ─── DIVIDER ─── */
+      .divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 2rem 5vw;
+      }
+
+      .divider__line {
+        width: 80px;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--gold-dark),
+          transparent
+        );
+      }
+
+      .divider__diamond {
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        transform: rotate(45deg);
+      }
+
+      /* ─── MENU PREVIEW ─── */
+      .menu {
+        padding: 8rem 5vw;
+        background: var(--bg-section);
+      }
+
+      .menu__header {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 5rem;
+      }
+
+      .menu__header .section-eyebrow {
+        justify-content: center;
+      }
+
+      .menu__heading {
+        font-family: var(--serif);
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
+        font-weight: 300;
+        line-height: 1.15;
+        color: var(--cream);
+        margin-bottom: 1.5rem;
+      }
+
+      .menu__subtitle {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+      }
+
+      .menu__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .dish {
+        position: relative;
+        background: var(--bg-card);
+        overflow: hidden;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .dish:hover {
+        transform: translateY(-6px);
+      }
+
+      .dish__image {
+        aspect-ratio: 4/3;
+        overflow: hidden;
+      }
+
+      .dish__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.8) saturate(1.1);
+        transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .dish:hover .dish__image img {
+        transform: scale(1.06);
+      }
+
+      .dish__content {
+        padding: 2rem 1.8rem 2.5rem;
+      }
+
+      .dish__category {
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.75rem;
+      }
+
+      .dish__name {
+        font-family: var(--serif);
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: var(--cream);
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+      }
+
+      .dish__description {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .dish__price {
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        color: var(--gold);
+        font-weight: 400;
+      }
+
+      .dish__border {
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(201, 169, 110, 0);
+        transition: border-color 0.4s ease;
+        pointer-events: none;
+      }
+
+      .dish:hover .dish__border {
+        border-color: rgba(201, 169, 110, 0.2);
+      }
+
+      .menu__cta {
+        text-align: center;
+        margin-top: 4rem;
+      }
+
+      /* ─── RESERVATION BAND ─── */
+      .reservation {
+        position: relative;
+        padding: 10rem 5vw;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .reservation__bg {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            to bottom,
+            var(--bg-section),
+            rgba(12, 11, 9, 0.4),
+            var(--bg-dark)
+          ),
+          url("https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=1920&q=80")
+            center/cover no-repeat;
+      }
+
+      .reservation__content {
+        position: relative;
+        z-index: 2;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      .reservation__heading {
+        font-family: var(--serif);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 300;
+        line-height: 1.15;
+        color: var(--cream);
+        margin-bottom: 1.5rem;
+      }
+
+      .reservation__heading em {
+        font-style: italic;
+        color: var(--gold);
+      }
+
+      .reservation__body {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.9;
+        margin-bottom: 3rem;
+      }
+
+      /* ─── FOOTER ─── */
+      .footer {
+        border-top: 1px solid rgba(201, 169, 110, 0.1);
+        padding: 5rem 5vw 3rem;
+      }
+
+      .footer__grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .footer__brand .nav__logo {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+      }
+
+      .footer__brand p {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+        max-width: 300px;
+      }
+
+      .footer__heading {
+        font-family: var(--serif);
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--cream);
+        margin-bottom: 1.5rem;
+      }
+
+      .footer__list {
+        list-style: none;
+      }
+
+      .footer__list li {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 0.6rem;
+        line-height: 1.6;
+      }
+
+      .footer__list a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer__list a:hover {
+        color: var(--gold);
+      }
+
+      .footer__bottom {
+        max-width: 1400px;
+        margin: 4rem auto 0;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(201, 169, 110, 0.07);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer__bottom p {
+        font-size: 0.7rem;
+        color: var(--text-subtle);
+        letter-spacing: 0.1em;
+      }
+
+      /* ─── ANIMATIONS ─── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .reveal.visible,
+      .no-js .reveal {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
+
+      /* ─── RESPONSIVE ─── */
+      @media (max-width: 1024px) {
+        .menu__grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .footer__grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav {
+          padding: 1.2rem 1.5rem;
+        }
+
+        .nav__links {
+          display: none;
+        }
+
+        .hero__content {
+          padding: 0 1.5rem 6vh;
+        }
+
+        .hero__scroll {
+          display: none;
+        }
+
+        .intro {
+          grid-template-columns: 1fr;
+          padding: 6rem 1.5rem;
+          gap: 3rem;
+        }
+
+        .intro__image {
+          order: -1;
+          aspect-ratio: 16/10;
+        }
+
+        .menu {
+          padding: 5rem 1.5rem;
+        }
+
+        .menu__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .reservation {
+          padding: 6rem 1.5rem;
+        }
+
+        .footer {
+          padding: 3rem 1.5rem 2rem;
+        }
+
+        .footer__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer__bottom {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+ <!-- NAV -->
+<nav class="nav scrolled" id="nav">
+  <a href="#" class="nav__logo" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
+    <!-- Icône du Logo -->
+    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+      <circle cx="50" cy="50" r="45" stroke="#c9a96e" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <circle cx="50" cy="50" r="40" stroke="#c9a96e" stroke-width="1"/>
+      <!-- Lignes de la feuille de palmier stylisée/Fourchette -->
+      <path d="M50 80 V25" stroke="#c9a96e" stroke-width="2" stroke-linecap="round"/>
+      <path d="M50 40 C65 35 70 45 50 55" stroke="#c9a96e" stroke-width="1.5"/>
+      <path d="M50 48 C68 45 72 55 50 65" stroke="#c9a96e" stroke-width="1.5"/>
+      <path d="M50 40 C35 35 30 45 50 55" stroke="#c9a96e" stroke-width="1.5"/>
+      <path d="M50 48 C32 45 28 55 50 65" stroke="#c9a96e" stroke-width="1.5"/>
+    </svg>
+    
+    <!-- Texte qui hérite du style CSS original -->
+    <span>Bethsy Saveur de l'Île</span>
+  </a>
+
+  <ul class="nav__links">
+    <li><a href="#carte">La Carte</a></li>
+    <li><a href="#histoire">Notre Histoire</a></li>
+    <li><a href="#reservation">Réservation</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__image"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">L'art du service traiteur</p>
+        <h1 class="hero__title">L'art de la<br /><em>table</em></h1>
+       <p class="hero__description">
+  Une expérience culinaire d'exception, où chaque création raconte 
+  les richesses de notre île et le savoir-faire unique de notre cheffe.
+</p>
+        <a href="#reservation" class="btn">
+          Réserver une date
+          <span class="btn__arrow">→</span>
+        </a>
+      </div>
+      <div class="hero__scroll">
+        <span>Défiler</span>
+        <div class="hero__scroll__line"></div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro" id="histoire">
+      <div class="intro__text reveal visible">
+        <p class="section-eyebrow">Notre philosophie</p>
+        <h2 class="intro__heading">
+          Un dialogue entre<br />tradition et modernité
+        </h2>
+        <p class="intro__body">
+          <p class="intro__body">
+  Portée par des années de passion et de savoir-faire, Bethsy Saveurs de l'Île incarne l'excellence et la générosité 
+  de la cuisine créole au cœur du Cap-Haïtien. La Cheffe Bethsy puise 
+  dans les secrets de son savoir-faire et les épices de notre île paradisiaque pour composer des buffets et des réceptions 
+  où se rencontrent authenticité traditionnelle et élégance contemporaine.
+</p>
+<p class="intro__body">
+  Chaque événement inspire nos créations, chaque produit est choisi avec soin, 
+  chaque détail est pensé pour que votre réception devienne un souvenir 
+  impérissable pour vous et vos invités.
+</p>
+        </p>
+        <p class="intro__signature">— Cheffe Bethsy Saint-Hubert</p>
+      </div>
+      <div class="intro__image reveal reveal-delay-2 visible">
+        <img
+          src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&amp;q=80"
+          alt="Le Chef en cuisine"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <div class="divider">
+      <div class="divider__line"></div>
+      <div class="divider__diamond"></div>
+      <div class="divider__line"></div>
+    </div>
+
+    <!-- MENU PREVIEW -->
+    <section class="menu" id="carte">
+      <div class="menu__header reveal visible">
+        <p class="section-eyebrow">La carte</p>
+        <h2 class="menu__heading">Nos plats<br />signatures</h2>
+        <p class="menu__subtitle">
+          Une sélection de créations emblématiques, reflet de notre identité
+          culinaire.
+        </p>
+      </div>
+
+      <div class="menu__grid">
+        <!-- Dish 1 -->
+        <article class="dish reveal reveal-delay-1 visible">
+          <div class="dish__image">
+            <img
+  src="images/Gemini_Generated_Image_e4z86re4z86re4z8.png"
+  alt="Griot de porc confit au rhum"
+  loading="lazy"
+/>
+          </div>
+          <div class="dish__content">
+  <p class="dish__category">Viande</p>
+  <h3 class="dish__name">Griot de Porc avec Pikliz</h3>
+  <p class="dish__description">
+    De tendres cubes de porc marinés dans le traditionnel épi, puis frits jusqu'à obtenir une texture croustillante à l'extérieur et juteuse à l'intérieur. Accompagnés de pikliz, un condiment croquant et très piquant à base de chou, carottes et piments boucs.
+  </p>
+  <p class="dish__price">600 HTG</p>
+</div>
+          <div class="dish__border"></div>
+        </article>
+
+        <!-- Dish 2 -->
+        <article class="dish reveal reveal-delay-2 visible">
+          <div class="dish__image">
+            <img
+              src="images/Gemini_Generated_Image_jg291ojg291ojg29.png"
+              alt="Buffet de pâtisseries pour graduation avec gâteau et mignardises."
+              loading="lazy"
+            />
+          </div>
+          <div class="dish__content">
+  <p class="dish__category">Pâtisserie Sucrée</p>
+  <h3 class="dish__name">Gâteau au Beurre Traditionnel (Gâteau de Graduation)</h3>
+  <p class="dish__description">
+    Le fameux gâteau haïtien, riche en beurre, parfumé au zeste de lime, à la cannelle, à la vanille et relevé d'une touche de rhum Barbancourt. Moelleux à souhait, il est l'élément central des célébrations de réussite, souvent décoré d'un glaçage royal blanc raffiné.
+  </p>
+  <p class="dish__price">4500 HTG (Gâteau entier pour buffet)</p>
+</div>
+          <div class="dish__border"></div>
+        </article>
+
+        <!-- Dish 3 -->
+        <article class="dish reveal reveal-delay-3 visible">
+          <div class="dish__image">
+            <img
+              src="images/Gemini_Generated_Image_6ojozr6ojozr6ojo.png"
+              alt="lambi local"
+              loading="lazy"
+            />
+          </div>
+          <div class="dish__content">
+  <p class="dish__category">Poisson / Crustacés</p>
+  <h3 class="dish__name">Lambi en Sauce (ou Lambi Grillé)</h3>
+  <p class="dish__description">
+    Du conque (lambi) délicatement attendri, mariné au jus de citron vert et aux épices locales, puis mijoté dans une sauce tomate riche, relevée et parfumée. Un plat de choix, prestigieux et très prisé lors des grands événements.
+  </p>
+  <p class="dish__price">1250 HTG</p>
+</div>
+          <div class="dish__border"></div>
+        </article>
+      </div>
+
+      <div class="menu__cta reveal visible">
+        <a href="#" class="btn">
+          Découvrir la carte complète
+          <span class="btn__arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- RESERVATION BAND -->
+    <section class="reservation" id="reservation">
+      <div class="reservation__bg"></div>
+      <div class="reservation__content reveal visible">
+        <p class="section-eyebrow" style="justify-content: center">
+          Réservation
+        </p>
+        <h2 class="reservation__heading">
+          Votre plus belle réception<br /><em>commence ici</em>
+        </h2>
+        <p class="reservation__body">
+          Pour une soirée inoubliable, réservez votre table et laissez-nous
+          orchestrer chaque détail de votre expérience gastronomique.
+        </p>
+        <a href="tel:+509 46 48 0492" class="btn btn--filled">
+          +509 46 48 0492
+          <span class="btn__arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">Bethsy Saveur de l'Île</a>
+          <p>
+            Service traiteur d'exception au cœur du Cap-Haïtien. Une cuisine 
+créole raffinée qui célèbre les saveurs de notre île.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Adresse</h4>
+          <ul class="footer__list">
+            <li>Nº17 bis, Rue 15-L</li>
+            <li>HT 10001 Cap-Haïtien, Haïti</li>
+            <li style="margin-top: 0.5rem">
+              <a href="tel:+33142681234">+509 46 48 0492</a>
+            </li>
+            <li>
+              <a href="mailto:marcrubenmacean@gmail.com"
+                >contact@bethsy-saveur-de-lile.ht</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Horaires</h4>
+          <ul class="footer__list">
+            <li>Dimanche — Vendredi</li>
+            <li>Matin : 8h00 AM — 12h00 PM</li>
+            <li>Après-midi : 2h00 PM — 5h00 PM</li>
+            <li
+              style="
+                margin-top: 0.8rem;
+                color: var(--text-subtle);
+                font-size: 0.78rem;
+              "
+            >
+              Fermé le Vendredi à 3h PM
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Suivez-nous</h4>
+          <ul class="footer__list">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Thread</a></li>
+            <li><a href="#">X / Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Bethsy Saveur de l'Île. Tous droits réservés.</p>
+        <p>Mentions légales &nbsp;·&nbsp; Politique de confidentialité</p>
+      </div>
+    </footer>
+
+    <script>
+      // Navbar scroll effect
+      const nav = document.getElementById("nav");
+      window.addEventListener(
+        "scroll",
+        () => {
+          nav.classList.toggle("scrolled", window.scrollY > 60);
+        },
+        { passive: true },
+      );
+
+      // Reveal on scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
