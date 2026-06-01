@@ -771,6 +771,129 @@
           text-align: center;
         }
       }
+/* ==========================================================================
+   SECTION HORAIRES & CARTE (INFO-SECTION) - VERSION MISE À JOUR
+   ========================================================================== */
+.info-section {
+  padding: 6rem 5vw; 
+  border-top: 1px solid rgba(201, 169, 110, 0.1);
+  background-color: var(--bg-dark, #0c0b09);
+}
+
+.info-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .info-section__grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+  }
+}
+
+/* En-tête & Badge de Statut */
+.info-section__header {
+  margin-bottom: 1.5rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border-radius: 2px;
+}
+
+.status-badge--closed {
+  background: rgba(210, 16, 52, 0.1);
+  color: #d21034;
+  border: 1px solid rgba(210, 16, 52, 0.2);
+}
+
+/* Conteneur Horaires avec Barre Verticale (Bloc A) */
+.info-section__schedule-box {
+  border-left: 2px solid var(--gold, #c9a96e);
+  padding-left: 2rem;
+}
+
+/* Titre Horaires (Style B agrandi) */
+.info-section__heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  color: var(--gold, #c9a96e);
+  margin-bottom: 1.2rem;
+}
+
+/* Liste des horaires (Style B adapté) */
+.info-section__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.info-section__item {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: var(--text-muted, #9a948a);
+  line-height: 1.5;
+}
+
+.info-section__item--highlight {
+  color: var(--cream, #f5f0e8);
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.info-section__item--note {
+  margin-top: 0.8rem;
+  color: var(--text-subtle, #a3a29e);
+  font-size: 0.85rem;
+}
+
+/* Wrapper et Intégration de la Carte Maps */
+.info-section__map-wrapper {
+  width: 100%;
+}
+
+.info-section__map {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+  .info-section__map {
+    height: 400px;
+  }
+}
+
+.info-section__map iframe {
+  width: 100%;
+  height: 100%;
+  filter: invert(90%) hue-rotate(180deg) contrast(100%);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.info-section__map iframe:hover {
+  opacity: 1;
+}
+
     </style>
   </head>
   <body>
@@ -961,6 +1084,48 @@
       </div>
     </section>
 
+<!-- SECTION HORAIRES & ACCÈS -->
+    <section class="info-section reveal" id="hours">
+      <div class="container info-section__grid">
+        
+        <!-- Bloc Horaires -->
+       <div class="info-section__hours">
+          <div class="info-section__header">
+            <span id="store-status">
+              <span class="status-badge status-badge--closed">Fermé actuellement</span>
+            </span>
+          </div>
+          
+          <div class="info-section__schedule-box">
+            <h4 class="info-section__heading">Horaires</h4>
+            <ul class="info-section__list">
+              <li class="info-section__item info-section__item--highlight">Dimanche — Vendredi</li>
+              <li class="info-section__item">Matin : 8h00 AM — 12h00 PM</li>
+              <li class="info-section__item">Après-midi : 2h00 PM — 5h00 PM</li>
+              <li class="info-section__item info-section__item--note">
+                Fermé le Vendredi à 3h PM
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bloc Carte Google Maps -->
+        <div class="info-section__map-wrapper">
+          <div class="info-section__map">
+            <iframe
+              src="https://maps.google.com/maps?q=Jean-Jacques%20Dessalines%20Statue%2C%20Cap-Ha%C3%AFtien%2C%20Ha%C3%AFti&amp;hl=fr&amp;z=16&amp;output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              width="100%"
+              height="100%"
+              style="border:0;">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="footer" id="contact">
       <div class="footer__grid">
@@ -984,24 +1149,6 @@ créole raffinée qui célèbre les saveurs de notre île.
               <a href="mailto:marcrubenmacean@gmail.com"
                 >contact@bethsy-saveur-de-lile.ht</a
               >
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Horaires</h4>
-          <ul class="footer__list">
-            <li>Dimanche — Vendredi</li>
-            <li>Matin : 8h00 AM — 12h00 PM</li>
-            <li>Après-midi : 2h00 PM — 5h00 PM</li>
-            <li
-              style="
-                margin-top: 0.8rem;
-                color: var(--text-subtle);
-                font-size: 0.78rem;
-              "
-            >
-              Fermé le Vendredi à 3h PM
             </li>
           </ul>
         </div>
